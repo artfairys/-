@@ -1,47 +1,21 @@
-<html xmlns="http://www.w3.org/1999/xhtml" >
+ 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
-<title>页面首次访问判断</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+ var  value= sessionStorage.getItem("flg");
+  if(value==null || value==undefined){
+          setTimeout(function(){
+        sessionStorage.setItem("flg","2");
+        window.location.href = "https://www.a.com/Aaddons/QyWechat/H5/Reply/collect_clcuser_infor.html?id=4";
+       },1000);
+  }
+ 
+</script>
 </head>
-<body> 
-<h1><a href="http://www.thevv.top">GO</a></h1> 
+<body>
+啊手动阀手动阀
+</body>
  
-<script language ="javascript" type ="text/javascript" >    
-//1浏览器关闭则window.name为空，可以实现跨域，数据传递         
-alert((window.name == "" ? "是" : "不是") + "第一次开这个窗口！")
-window.name = "00";
-//cookie判断
-function setCookie(cname, cvalue, exdays) {
-	var d = new Date();
-	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-	var expires = "expires=" + d.toGMTString();
-	document.cookie = cname + "=" + cvalue + "; " + expires;
-}
-function getCookie(cname) {
-	var name = cname + "=";
-	var ca = document.cookie.split(';');
-	for (var i = 0; i < ca.length; i++) {
-		var c = ca[i].trim();
-		if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-	}
-	return "";
-}
- 
-function checkCookie() {
-	var user = getCookie("username");
-	if (user != "") {
-		//不是首次访问 
-		alert("Welcome again " + user);
-	} else {
-		//首次访问 
-		user = prompt("Please enter your name:", "");
-		if (user != "" && user != null) {
-			setCookie("username", user, 2 / (3600 * 24));
-		}
-	}
-}
-window.onload = function() {
-	checkCookie()
-}
-   </script>
-   </body></html>  
+</html>
